@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outFile": "app.js"
+    },
+    "files": [
+        "src/ts/app.ts"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        "bower_components"
+    ]
+}
