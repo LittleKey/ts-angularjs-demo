@@ -7,8 +7,7 @@ module App {
       static $inject = ['$scope', '$routeParams'];
       constructor(
           private $scope: ng.IScope,
-          private $routeParams: ng.route.IRouteParamsService
-      ) {
+          private $routeParams: ng.route.IRouteParamsService) {
           let name = $routeParams['name'];
           $scope['name'] = name ? name : 'world (default)';
       }

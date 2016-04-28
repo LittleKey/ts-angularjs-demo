@@ -1,6 +1,7 @@
 /// <reference path="../../typings/angularjs/angular.d.ts" />
-/// <reference path="../../typings/angularjs/angular-route.d.ts" />
 /// <reference path="controller/hello.ts" />
+/// <reference path="controller/test.ts" />
+
 
 
 function routeConfig($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
@@ -12,6 +13,10 @@ function routeConfig($routeProvider: ng.route.IRouteProvider, $locationProvider:
     .when('/:name', {
         controller: App.Ctrl.Hello,
         templateUrl: "templates/hello.html"
+    })
+    .when("/test/1", {
+        controller: App.Ctrl.Test,
+        templateUrl: "templates/test.html"
     })
     .otherwise({
         redirectTo: '/'
