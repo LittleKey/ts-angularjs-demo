@@ -3,13 +3,28 @@
     <head>
         <meta charset="utf-8">
         <title>Hello</title>
-        <!-- inject:css --><!-- endinject -->
-        <!-- bower:js --><!-- endbower -->
-        <!-- inject:js --><!-- endinject -->
+        <!-- build:vendorjs /script/vendor.js -->
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-route/angular-route.js"></script>
+        <script src="../bower_components/angular-animate/angular-animate.js"></script>
+        <!-- endbuild -->
+        <!-- build:js /script/app.js -->
+        <script src="../build/script/app.js"></script>
+        <script src="../build/script/templates.js"></script>
+        <!-- endbuild -->
+        <!-- build:css /stylesheet/vendor.css -->
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+        <!-- endbuild -->
+        <!-- build:less /stylesheet/app.css -->
+        <link rel="stylesheet" href="less/app.less">
+        <!-- endbuild -->
+        <!-- build:css /stylesheet/app_v2.css -->
+        <link rel="stylesheet" href="css/custom.css">
+        <!-- endbuild -->
         <base href="/">
     </head>
-    <body ng-app="App">
+    <body ng-app="app">
         <a href="/name">Navigate me </a>
-        <ng-view></ng-view>
+        <div ng-view class="view-frame"></div>
     </body>
 </html>

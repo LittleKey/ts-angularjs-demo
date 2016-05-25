@@ -6,17 +6,18 @@
 
 function routeConfig($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
     $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix("!")
     $routeProvider.when('/', {
         controller: App.Ctrl.Hello,
-        templateUrl: "templates/hello.html"
+        templateUrl: "hello.html"
     })
     .when('/:name', {
         controller: App.Ctrl.Hello,
-        templateUrl: "templates/hello.html"
+        templateUrl: "hello.html"
     })
     .when("/test/1", {
         controller: App.Ctrl.Test,
-        templateUrl: "templates/test.html"
+        templateUrl: "test.html"
     })
     .otherwise({
         redirectTo: '/'
@@ -24,5 +25,5 @@ function routeConfig($routeProvider: ng.route.IRouteProvider, $locationProvider:
 };
 routeConfig.$inject = ['$routeProvider', '$locationProvider'];
 
-let app = angular.module("App", ['ngRoute']);
+let app = angular.module("app", ['ngRoute']);
 app.config(routeConfig);

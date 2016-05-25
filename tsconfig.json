@@ -1,13 +1,11 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "outFile": "app.js"
+        "outFile": "build/script/app.js"
     },
-    "files": [
-        "src/ts/app.ts"
-    ],
     "exclude": [
         "dist",
+        "build",
         "node_modules",
         "bower_components"
     ]

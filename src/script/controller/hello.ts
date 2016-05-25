@@ -11,8 +11,11 @@ module App {
           private $http: ng.IHttpService) {
           let name = $routeParams['name'];
           $scope['name'] = name ? name : 'world (default)';
+          $scope['click_hello'] = (name)=>{
+            $scope['name'] = name + name;
+          };
           $http.get("/index.html").then(function (response: any) {
-            $scope['name'] = response.status;
+            $scope['response_status'] = response.status;
           });
       }
     }
