@@ -1,2 +1,8 @@
 <p ng-src="visible" ng-click="click_hello(visible)">Hello, {{name}}.</p>
-<p class="view-frame" ng-show="visible">reseponse status: {{response_status}}.</p>
+<div class="view-frame" ng-show="visible">reseponse: 
+  <ul class="view-frame">
+    <div class="view-frame" ng-repeat="(key, value) in response">
+      <li>{{key}} : {{value}}</li>
+    </div>
+  </ul>
+ .</div>
