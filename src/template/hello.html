@@ -1,8 +1,13 @@
 <p ng-src="visible" ng-click="click_hello(visible)">Hello, {{name}}.</p>
 <div class="view-frame" ng-show="visible">reseponse: 
   <ul class="view-frame">
-    <div class="view-frame" ng-repeat="(key, value) in response">
-      <li>{{key}} : {{value}}</li>
+    <p>array</p>
+    <div class="view-frame" ng-repeat="item in array_response | filter: arrayFilter">
+      <li>{{item.name}} : {{item.age}}</li>
     </div>
+    <p>obj</p>
+    <div class="view-frame" ng-repeat="(key, value) in object_response">
+      <li>{{key}} : {{key === 'date' ? (value|date: 'yyyy-MM-dd') : value}}</li>
+     </div>
   </ul>
  .</div>

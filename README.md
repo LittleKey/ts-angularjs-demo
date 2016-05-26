@@ -11,14 +11,14 @@ USAGE
 - build
 
 ```
-gulp build [-debug]
+gulp build [-prod]
 ```
 
 - watch
 
 ```
 tsc -p -w .
-gulp watch [-debug]
+gulp watch [-prod]
 ```
 
 *before `watch` you need `build` first.

@@ -26,4 +26,5 @@ function routeConfig($routeProvider: ng.route.IRouteProvider, $locationProvider:
 routeConfig.$inject = ['$routeProvider', '$locationProvider'];
 
 let app = angular.module("app", ['ngRoute', 'ngAnimate', 'ngResource']);
+app.service("utils", App.Utils.Utils);
 app.config(routeConfig);

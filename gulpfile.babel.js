@@ -29,7 +29,7 @@ let htmlminOptions = {
 };
 
 gulp.task('html', ()=> {
-  let useminConfig = yargs.argv.debug ? {
+  let useminConfig = !yargs.argv.prod ? {
     html: [ () => htmlmin(htmlminOptions) ],
     css: [],
     less: [less({paths: [path.join(__dirname, "src/stylesheet")]})],
