@@ -6,7 +6,7 @@
 
 function routeConfig($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
     $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix("!")
+    $locationProvider.hashPrefix("!");
     $routeProvider.when('/', {
         controller: App.Ctrl.Hello,
         templateUrl: "hello.html"

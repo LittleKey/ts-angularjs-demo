@@ -19,20 +19,24 @@ module App {
           $scope['visible'] = false;
           $scope['click_hello'] = (visible: boolean)=>{
             $scope['visible'] = !visible;
-            $resource("/asset/array_data.json").query().$promise.then((response: any) => {
-              $scope['array_response'] = response;
-            });
-            $resource("/asset/object_data.json").get().$get().then((response) => {
-              var resp = {};
-              resp['obj_title'] = response['title'];
-              resp['format_time'] = utils.formatTime(response['time']);
-              resp['date'] = response['time'];
-              $scope['object_response'] = resp;
-            });
+            $scope['array_response'] = [];
+            $scope['object_response'] = {};
+            if ($scope['visible']) {
+              $resource("/asset/array_data.json").query().$promise.then((response: any)=>{
+                $scope['array_response'] = response;
+              });
+              $resource("/asset/object_data.json").get().$get().then((response)=>{
+                var resp = {};
+                resp['obj_title'] = response['title'];
+                resp['format_time'] = utils.formatTime(response['time']);
+                resp['date'] = response['time'];
+                $scope['object_response'] = resp;
+              });
+            }
           };
-          $scope['arrayFilter'] = (item) => {
+          $scope['arrayFilter'] = (item)=>{
             return item.age >= 18;
-          }
+          };
       }
     }
   }
