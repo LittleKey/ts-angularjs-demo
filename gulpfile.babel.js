@@ -32,13 +32,13 @@ gulp.task('html', ()=> {
   let useminConfig = yargs.argv.debug ? {
     html: [ () => htmlmin(htmlminOptions) ],
     css: [],
-    less: [less({paths: [path.join(__dirname, "src/less")]})],
+    less: [less({paths: [path.join(__dirname, "src/stylesheet")]})],
     js: [],
     vendorjs: [],
   } : {
     html: [ () => htmlmin(htmlminOptions) ],
     css: [cssmin, rev],
-    less: [less({paths: [path.join(__dirname, "src/less")]}), cssmin, rev],
+    less: [less({paths: [path.join(__dirname, "src/stylesheet")]}), cssmin, rev],
     js: [uglify, rev],
     vendorjs: [rev],
   };
