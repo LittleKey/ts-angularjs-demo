@@ -17,7 +17,7 @@ gulp build [-prod]
 - watch
 
 ```
-tsc -p -w .
+tsc -w -p .
 gulp watch [-prod]
 ```
 
