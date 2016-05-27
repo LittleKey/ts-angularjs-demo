@@ -38,6 +38,18 @@ module App {
             return item.age >= 18;
           };
           var socket = new WebSocket("ws://10.10.11.175/chat/ws");
+          socket.onopen = (ev: Event)=>{
+            console.log("onOpen");
+          };
+          socket.onmessage = (ev: MessageEvent)=>{
+            console.log("onMessage: " + ev.data);
+          };
+          socket.onerror = (ev: Event)=>{
+            console.log("onError");
+          };
+          socket.onclose = (ev: CloseEvent)=>{
+            console.log("onClose");
+          };
       }
     }
   }
