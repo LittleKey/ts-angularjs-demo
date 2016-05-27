@@ -4,7 +4,6 @@
 /// <reference path="../utils.ts" />
 
 
-
 module App {
   export module Ctrl {
     export class Hello {
@@ -32,11 +31,13 @@ module App {
                 resp['date'] = response['time'];
                 $scope['object_response'] = resp;
               });
+              socket.send("123");
             }
           };
           $scope['arrayFilter'] = (item)=>{
             return item.age >= 18;
           };
+          var socket = new WebSocket("ws://10.10.11.175/chat/ws");
       }
     }
   }
