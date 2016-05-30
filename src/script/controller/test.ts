@@ -7,7 +7,7 @@ module App {
       static $inject = ['$scope'];
       constructor(
         private $scope: ng.IScope) {
-          $scope.$watch('size', (data:string)=>{
+          $scope.$watch('size', (data:string)=> {
             let size = parseInt(data);
             if (!size) {
               $scope['size'] = '0';

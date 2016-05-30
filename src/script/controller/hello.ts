@@ -21,10 +21,10 @@ module App {
             $scope['array_response'] = [];
             $scope['object_response'] = {};
             if ($scope['visible']) {
-              $resource("/asset/array_data.json").query().$promise.then((response: any)=>{
+              $resource("/asset/array_data.json").query().$promise.then((response: any)=> {
                 $scope['array_response'] = response;
               });
-              $resource("/asset/object_data.json").get().$get().then((response)=>{
+              $resource("/asset/object_data.json").get().$get().then((response)=> {
                 var resp = {};
                 resp['obj_title'] = response['title'];
                 resp['format_time'] = utils.formatTime(response['time']);
@@ -34,20 +34,20 @@ module App {
               socket.send("123");
             }
           };
-          $scope['arrayFilter'] = (item)=>{
+          $scope['arrayFilter'] = (item)=> {
             return item.age >= 18;
           };
           var socket = new WebSocket("ws://10.10.11.175/chat/ws");
-          socket.onopen = (ev: Event)=>{
+          socket.onopen = (ev: Event)=> {
             console.log("onOpen");
           };
-          socket.onmessage = (ev: MessageEvent)=>{
+          socket.onmessage = (ev: MessageEvent)=> {
             console.log("onMessage: " + ev.data);
           };
-          socket.onerror = (ev: Event)=>{
+          socket.onerror = (ev: Event)=> {
             console.log("onError");
           };
-          socket.onclose = (ev: CloseEvent)=>{
+          socket.onclose = (ev: CloseEvent)=> {
             console.log("onClose");
           };
       }
