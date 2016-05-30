@@ -1,6 +1,5 @@
 /// <reference path="../../typings/angularjs/angular.d.ts" />
-/// <reference path="controller/hello.ts" />
-/// <reference path="controller/test.ts" />
+/// <reference path="controller/Home.ts" />
 
 
 
@@ -8,16 +7,12 @@ function routeConfig($routeProvider: ng.route.IRouteProvider, $locationProvider:
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix("!");
     $routeProvider.when('/', {
-        controller: App.Ctrl.Hello,
-        templateUrl: "hello.html"
+        controller: App.Ctrl.Home,
+        templateUrl: "home.html"
     })
-    .when('/:name', {
-        controller: App.Ctrl.Hello,
-        templateUrl: "hello.html"
-    })
-    .when("/test/1", {
-        controller: App.Ctrl.Test,
-        templateUrl: "test.html"
+    .when('/:roomId', {
+        controller: App.Ctrl.Home,
+        templateUrl: "home.html"
     })
     .otherwise({
         redirectTo: '/'

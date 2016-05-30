@@ -8,11 +8,11 @@ module App {
 
       }
       
-      formatDate(millis: number): String {
+      formatDate(millis: number): string {
         return this.$filter('date')(millis, "yyyy:MM:dd");
       }
       
-      formatTime(millis: number): String {
+      formatTime(millis: number): string {
         return this.$filter('date')(millis, "HH:mm:ss");
       }
     }

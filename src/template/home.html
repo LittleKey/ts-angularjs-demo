@@ -1,0 +1,24 @@
+<input ng-model="room_name" type="data" required="string">
+<button ng-src="room_name" ng-click="enter(room_name)">enter</button>
+<p ng-src="visible" ng-click="click_hello(visible)">room name: {{room_name}}.</p>
+<!--<div class="view-frame" ng-show="visible">reseponse: 
+  <ol>
+    <p>array</p>
+    <div ng-repeat="item in array_response | filter: arrayFilter">
+      <li>{{item.name}} : {{item.age}}</li>
+    </div>
+    <p>obj</p>
+    <div ng-repeat="(key, value) in object_response">
+      <li>{{key}} : {{key === 'date' ? (value|date: 'yyyy-MM-dd') : value}}</li>
+     </div>
+  </ol>
+ .</div>-->
+<div class="view-frame" ng-show="visible">
+  <ul>
+    <div ng-repeat="msg in messages track by $index">
+      <li>{{msg}}</li>
+    </div>
+  </ul>
+</div>
+<input ng-model="message" type="data" required="string" ng-keyup="$event.keyCode == 13 && send(message)">
+<button ng-src="message" ng-click="send(message)">send</button>
