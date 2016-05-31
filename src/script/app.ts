@@ -1,6 +1,6 @@
 /// <reference path="../../typings/angularjs/angular.d.ts" />
 /// <reference path="controller/Home.ts" />
-
+/// <reference path="utils.ts" />
 
 
 function routeConfig($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {

@@ -18,7 +18,7 @@ module App {
           $scope['room_name'] = roomId ? roomId : '0';
           $scope['visible'] = false;
           $scope['messages'] = [];
-          $scope['quantity'] = 10;
+          $scope['quantity'] = -10;
           $scope['click_hello'] = (visible: boolean)=> {
             this.clickHello(visible);
           };
