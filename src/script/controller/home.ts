@@ -25,7 +25,9 @@ module App {
           $scope['arrayFilter'] = (item: any)=> {
             return item.age >= 18;
           };
-          this.$scope['socket'] = this.connectWebSocket(`ws://${$location.host()}/chat/ws`);
+          $scope['enter'] = (room_name: string)=> {
+            this.$scope['socket'] = this.connectWebSocket(`ws://${$location.host()}/chat/${$scope['room_name']}`);
+          };
       }
       
       private connectWebSocket(url: string): WebSocket {
