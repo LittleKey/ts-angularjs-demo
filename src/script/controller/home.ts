@@ -26,6 +26,9 @@ module App {
             return item.age >= 18;
           };
           $scope['enter'] = (room_name: string)=> {
+            if (this.$scope['socket'] != null) {
+              this.$scope['socket'].close();
+            }
             this.$scope['socket'] = this.connectWebSocket(`ws://${$location.host()}/chat/${$scope['room_name']}`);
           };
       }
